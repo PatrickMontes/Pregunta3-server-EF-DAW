@@ -1,0 +1,115 @@
+{
+	"info": {
+		"_postman_id": "93a4c59f-0b7f-455a-8760-ffa80f715615",
+		"name": "Pregunta3-EF-DAW",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34102124"
+	},
+	"item": [
+		{
+			"name": "AccesoPublico",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/public",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"public"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AccesoAutenticado",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiJjZDI3ODM0ZC01Y2Q5LTQ2NmMtYmQxMS1lMjYxMjgwN2MzZDQiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjbGllbnQiLCJhdWQiOiJjbGllbnQiLCJuYmYiOjE3Mjk1NzQyMzAsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6OTAwMCIsImV4cCI6MTcyOTU3NjAzMCwiaWF0IjoxNzI5NTc0MjMwLCJqdGkiOiI5M2Q1NDA5MC1hZDBmLTQ4M2MtOThlYi1lNTNiZDU5ZTkwODkifQ.bJ_AoKIVNcd4MU-QaaBwhCo35q0-dwJ-Z6IfGbc2b4qGn89gYT7kNmCbomu4DaqP9cjJXA8pTfT5SalHMrm3Qb9GNwg4URShZ6MLBltvffvI6lfDXEgUKiJ_6OV4FOfluBKmiW6TcWDLDAX2y0K3HGNseIC1ETtIlU6BU5OTebZf6Na9P7UX64BYX4k3dO3aEBGQBm7sogKCgnaoLGn3-j6WyGQmBFwTIN1CWGzb9jL-dfGfXR5aibg59v5s9DSh_96F4sLGP_2YyxKURhnKbbe-Xn99YZDWPG4QiVeJbrj6LO45b0uD0mph79D18mH62u7ZazNhKrp3fOWt4l6ZwQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/private",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"private"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "oauthToken",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "secret",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "client",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "patrick123",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:9000/oauth2/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
